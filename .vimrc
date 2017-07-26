@@ -1,10 +1,13 @@
 " setting
 
 "移動キー
-nmap t j 
+nmap t j
 vmap t j
-nmap n l 
+nmap n l
 vmap n l
+
+"undofile無生成
+set noundofile
 
 "文字コードをUFT-8に設定
 set fenc=utf-8
