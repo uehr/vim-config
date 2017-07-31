@@ -3,7 +3,10 @@ nmap - $
 nmap s ^
 
 "c++マクロ挿入コマンド
-command! Cmacro :r! type C:\Users\yudai\cppmacro.txt 
+command! Cmacro :r! type C:\Users\yudai\cmacro.txt 
+
+"vimrcファイル再読込
+command! Readrc :source C:\Users\yudai\.vimrc 
 
 :source $VIMRUNTIME/mswin.vim
  " Note: Skip initialization for vim-tiny or vim-small.
