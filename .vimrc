@@ -2,6 +2,7 @@
 nmap - $
 nmap s ^
 
+"c++マクロ挿入コマンド
 command! Cmacro :r! type C:\Users\yudai\cppmacro.txt 
 
 :source $VIMRUNTIME/mswin.vim
