@@ -1,4 +1,8 @@
 " setting
+nmap - $
+nmap s ^
+
+command! Cmacro :r! type C:\Users\yudai\cppmacro.txt 
 
 :source $VIMRUNTIME/mswin.vim
  " Note: Skip initialization for vim-tiny or vim-small.
