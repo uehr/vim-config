@@ -8,3 +8,4 @@
 #define down_queue(x) priority_queue<x>
 #define up_queue(x) priority_queue<x, vector<x>, greater<x>>
 #define i_str(x) atoi(x.c_str())
+typedef long long ll;
