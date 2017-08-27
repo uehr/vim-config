@@ -31,11 +31,8 @@ command! Readrc :source C:\Users\yudai\.vimrc
    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
 
- " Required:
  call neobundle#begin(expand('~/.vim/bundle/'))
 
- " NeoBundle ê›íË
- " Required:
  NeoBundleFetch 'Shougo/neobundle.vim'
 
  " My Bundles here:
@@ -47,6 +44,7 @@ NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimshell.git'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neocomplcache'
 
  call neobundle#end()
 
@@ -58,7 +56,6 @@ NeoBundle 'Shougo/neocomplete.vim'
  NeoBundleCheck
 
 "" neocomplcache
-NeoBundle 'Shougo/neocomplcache'
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
