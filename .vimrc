@@ -2,8 +2,18 @@
 nmap - $
 nmap s ^
 
+"クリップボード
+vmap bp "*p
+vmap by "*y
+nmap bp "*p
+nmap by "*y
+
 "c++マクロ挿入コマンド
 command! Cmacro :r! type C:\Users\yudai\cmacro.txt 
+
+"sp画面移動
+command! KK :<C-w> k 
+command! TT :<C-w> j 
 
 "vimrcファイル再読込
 command! Readrc :source C:\Users\yudai\.vimrc 
