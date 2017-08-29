@@ -120,7 +120,7 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 #define pf(x) push_front(x)
 #define vec_cpy(to,from) copy(all(to),back_inserter(from))
 #define ary_cpy(to,from) memcpy(to, from, sizeof(from))
-#define MOD = 1000000007; 
+#define MOD 1000000007 
 
 
 
