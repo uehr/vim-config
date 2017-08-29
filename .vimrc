@@ -14,7 +14,7 @@ set fileencoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,ucs2le,ucs-2,cp932,euc-jp
 
 "c++マクロ挿入コマンド
-command! Cmacro :r! cat ~/cmacro.txt
+command! Cmacro :r! cat ~/cmacro.cpp
 
 "sp画面移動
 command! KK :<C-w> k 
