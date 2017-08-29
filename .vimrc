@@ -2,21 +2,26 @@
 nmap - $
 nmap s ^
 
-"ƒNƒŠƒbƒvƒ{[ƒh
+"ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰
 vmap bp "*p
 vmap by "*y
 nmap bp "*p
 nmap by "*y
 
-"c++ƒ}ƒNƒ‘}“üƒRƒ}ƒ“ƒh
-command! Cmacro :r! type C:\Users\yudai\cmacro.txt 
+let $LANG='ja_JP.UTF-8'
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=iso-2022-jp,utf-8,ucs2le,ucs-2,cp932,euc-jp
 
-"sp‰æ–ÊˆÚ“®
+"c++ãƒã‚¯ãƒ­æŒ¿å…¥ã‚³ãƒãƒ³ãƒ‰
+command! Cmacro :r! cat ~/cmacro.cpp
+
+"spç”»é¢ç§»å‹•
 command! KK :<C-w> k 
 command! TT :<C-w> j 
 
-"vimrcƒtƒ@ƒCƒ‹Ä“Ç
-command! Readrc :source C:\Users\yudai\.vimrc 
+"vimrcãƒ•ã‚¡ã‚¤ãƒ«å†èª­è¾¼
+command! Readrc :source ~/.vimrc
 
 :source $VIMRUNTIME/mswin.vim
  " Note: Skip initialization for vim-tiny or vim-small.
@@ -37,9 +42,9 @@ command! Readrc :source C:\Users\yudai\.vimrc
 
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
- " Note: neobundle ‚Ìİ’è‚ğ.gvimrc‚É‘‚©‚È‚¢‚±‚ÆI
+ " Note: neobundle ã®è¨­å®šã‚’.gvimrcã«æ›¸ã‹ãªã„ã“ã¨ï¼
 
- " ‚±‚±‚É’Ç‰Á‚µ‚½‚¢ƒvƒ‰ƒOƒCƒ“‚ğ’Ç‰Á‚µ‚Ü‚·B 
+ " ã“ã“ã«è¿½åŠ ã—ãŸã„ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’è¿½åŠ ã—ã¾ã™ã€‚ 
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimshell.git'
@@ -89,82 +94,82 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"ˆÚ“®ƒL[
+"ç§»å‹•ã‚­ãƒ¼
 nmap t j
 vmap t j
 nmap n l
 vmap n l
 
-"undofile–³¶¬
+"undofileç„¡ç”Ÿæˆ
 set noundofile
 
-"•¶šƒR[ƒh‚ğUFT-8‚Éİ’è
+"æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’UFT-8ã«è¨­å®š
 set fenc=utf-8
 
-" ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹‚ğì‚ç‚È‚¢
+" ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‰ãªã„
 set nobackup
 
-" ƒXƒƒbƒvƒtƒ@ƒCƒ‹‚ğì‚ç‚È‚¢
+" ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‰ãªã„
 set noswapfile
 
-" •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚ª•ÏX‚³‚ê‚½‚ç©“®‚Å“Ç‚İ’¼‚·
+" ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒå¤‰æ›´ã•ã‚ŒãŸã‚‰è‡ªå‹•ã§èª­ã¿ç›´ã™
 set autoread
 
-" ƒoƒbƒtƒ@‚ª•ÒW’†‚Å‚à‚»‚Ì‘¼‚Ìƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚é‚æ‚¤‚É
+" ãƒãƒƒãƒ•ã‚¡ãŒç·¨é›†ä¸­ã§ã‚‚ãã®ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã‚‹ã‚ˆã†ã«
 set hidden
 
-" “ü—Í’†‚ÌƒRƒ}ƒ“ƒh‚ğƒXƒe[ƒ^ƒX‚É•\¦‚·‚é
+" å…¥åŠ›ä¸­ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã«è¡¨ç¤ºã™ã‚‹
 set showcmd
 
-" Œ©‚½–ÚŒn
-" s”Ô†‚ğ•\¦
+" è¦‹ãŸç›®ç³»
+" è¡Œç•ªå·ã‚’è¡¨ç¤º
 "
 set number
-" s––‚Ì1•¶šæ‚Ü‚ÅƒJ[ƒ\ƒ‹‚ğˆÚ“®‚Å‚«‚é‚æ‚¤‚É
+" è¡Œæœ«ã®1æ–‡å­—å…ˆã¾ã§ã‚«ãƒ¼ã‚½ãƒ«ã‚’ç§»å‹•ã§ãã‚‹ã‚ˆã†ã«
 "
 set virtualedit=onemore
-" ƒCƒ“ƒfƒ“ƒg‚ÍƒXƒ}[ƒgƒCƒ“ƒfƒ“ƒg
+" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã¯ã‚¹ãƒãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ
 "
 set smartindent
-" ƒr[ƒv‰¹‚ğ‰Â‹‰»
+" ãƒ“ãƒ¼ãƒ—éŸ³ã‚’å¯è¦–åŒ–
 "
 set visualbell
-" Š‡ŒÊ“ü—Í‚Ì‘Î‰‚·‚éŠ‡ŒÊ‚ğ•\¦
+" æ‹¬å¼§å…¥åŠ›æ™‚ã®å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’è¡¨ç¤º
 "
 set showmatch
-" ƒXƒe[ƒ^ƒXƒ‰ƒCƒ“‚ğí‚É•\¦
+" ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒ©ã‚¤ãƒ³ã‚’å¸¸ã«è¡¨ç¤º
 "
 set laststatus=2
-" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì•âŠ®
+" ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®è£œå®Œ
 "
 set wildmode=list:longest
-" Ü‚è•Ô‚µ‚É•\¦s’PˆÊ‚Å‚ÌˆÚ“®‚Å‚«‚é‚æ‚¤‚É‚·‚é
+" æŠ˜ã‚Šè¿”ã—æ™‚ã«è¡¨ç¤ºè¡Œå˜ä½ã§ã®ç§»å‹•ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 "
 nnoremap j gj
 nnoremap k gk
 
 
-" TabŒn
-" •s‰Â‹•¶š‚ğ‰Â‹‰»(ƒ^ƒu‚ªu?-v‚Æ•\¦‚³‚ê‚é)
+" Tabç³»
+" ä¸å¯è¦–æ–‡å­—ã‚’å¯è¦–åŒ–(ã‚¿ãƒ–ãŒã€Œ?-ã€ã¨è¡¨ç¤ºã•ã‚Œã‚‹)
 set list listchars=tab:\?\-
-" Tab•¶š‚ğ”¼ŠpƒXƒy[ƒX‚É‚·‚é
+" Tabæ–‡å­—ã‚’åŠè§’ã‚¹ãƒšãƒ¼ã‚¹ã«ã™ã‚‹
 set expandtab
-" s“ªˆÈŠO‚ÌTab•¶š‚Ì•\¦•iƒXƒy[ƒX‚¢‚­‚Â•ªj
+" è¡Œé ­ä»¥å¤–ã®Tabæ–‡å­—ã®è¡¨ç¤ºå¹…ï¼ˆã‚¹ãƒšãƒ¼ã‚¹ã„ãã¤åˆ†ï¼‰
 set tabstop=2
-" s“ª‚Å‚ÌTab•¶š‚Ì•\¦•
+" è¡Œé ­ã§ã®Tabæ–‡å­—ã®è¡¨ç¤ºå¹…
 set shiftwidth=2
 
 
-" ŒŸõŒn
-" ŒŸõ•¶š—ñ‚ª¬•¶š‚Ìê‡‚Í‘å•¶š¬•¶š‚ğ‹æ•Ê‚È‚­ŒŸõ‚·‚é
+" æ¤œç´¢ç³»
+" æ¤œç´¢æ–‡å­—åˆ—ãŒå°æ–‡å­—ã®å ´åˆã¯å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ãªãæ¤œç´¢ã™ã‚‹
 set ignorecase
-" ŒŸõ•¶š—ñ‚É‘å•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚Í‹æ•Ê‚µ‚ÄŒŸõ‚·‚é
+" æ¤œç´¢æ–‡å­—åˆ—ã«å¤§æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹å ´åˆã¯åŒºåˆ¥ã—ã¦æ¤œç´¢ã™ã‚‹
 set smartcase
-" ŒŸõ•¶š—ñ“ü—Í‚É‡Ÿ‘ÎÛ•¶š—ñ‚Éƒqƒbƒg‚³‚¹‚é
+" æ¤œç´¢æ–‡å­—åˆ—å…¥åŠ›æ™‚ã«é †æ¬¡å¯¾è±¡æ–‡å­—åˆ—ã«ãƒ’ãƒƒãƒˆã•ã›ã‚‹
 set incsearch
-" ŒŸõ‚ÉÅŒã‚Ü‚Ås‚Á‚½‚çÅ‰‚É–ß‚é
+" æ¤œç´¢æ™‚ã«æœ€å¾Œã¾ã§è¡Œã£ãŸã‚‰æœ€åˆã«æˆ»ã‚‹
 set wrapscan
-" ŒŸõŒê‚ğƒnƒCƒ‰ƒCƒg•\¦
+" æ¤œç´¢èªã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆè¡¨ç¤º
 set hlsearch
-" ESC˜A‘Å‚ÅƒnƒCƒ‰ƒCƒg‰ğœ
+" ESCé€£æ‰“ã§ãƒã‚¤ãƒ©ã‚¤ãƒˆè§£é™¤
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
