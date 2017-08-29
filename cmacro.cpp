@@ -101,9 +101,11 @@ using namespace std;
 #ifdef DEBUG
 #define debug_echo(e) cout << "L" << __LINE__ << ": " << e << endl
 #define debug_var(...) cout << "L" << __LINE__ << ": " pp_foreach(debug_var_elem, __VA_ARGS__) << endl
+#define debug_ary(ary) cout << "L" << __LINE__ << " [ "; for(auto ele : ary) cout << ele << " "; cout << "]" << endl;
 #else
 #define debug_echo(e)
-#define debug_var(...)
+#define debug_var(...)#define debug_ary(ary) cout << "L" << __LINE__ << " [ "; for(auto ele : ary) cout << ele << " "; cout << "]" << endl;
+#define debug_ary(ary)
 #endif
 
 // short names
