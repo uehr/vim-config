@@ -99,12 +99,13 @@ using namespace std;
 
 // iterators
 #define up up_iter ,
-#define up_iter3(i, start, end) for (int i = start; i <= end; i++)
-#define up_iter4(i, start, end, up) for (int i = start; i <= end; i += up)
+#define up_iter3(i, start, end) for (int i = start; i < end; i++)
+#define up_iter4(i, start, end, up) for (int i = start; i < end; i += up)
 #define up_iter(...) CAT(up_iter, PP_NARG(__VA_ARGS__))(__VA_ARGS__)
 #define down down_iter ,
-#define down_iter3(i, start, end) for (int i = end; i >= start; i--)
-#define down_iter4(i, start, end, down) for (int i = end; i >= start; i -= down)
+#define down_iter2(i, end) for(int i = end-1; i >= 0; i++)
+#define down_iter3(i, start, end) for (int i = end-1; i >= start; i--)
+#define down_iter4(i, start, end, down) for (int i = end-1; i >= start; i -= down)
 #define down_iter(...) CAT(down_iter, PP_NARG(__VA_ARGS__))(__VA_ARGS__)
 #define viter viter_iter ,
 #define viter_iter(i, v) auto tmpitr=v.begin(); for (auto i=*tmpitr; tmpitr != v.end(); tmpitr++)
