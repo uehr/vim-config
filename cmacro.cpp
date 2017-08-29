@@ -128,16 +128,14 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 #define ary_cpy(to,from) memcpy(to, from, sizeof(from))
 #define MOD = 1000000007; 
 
+
+
+//
 // Implementation
+//
+
+
 
 int main() {
-  pp_is_empty(0, 0, 0, 0, 0);
-  pp_is_empty(0);
-  pp_is_empty();
-  rep (i in 5) {
-    rep (j in 5) {
-      debug_var(i, j);
-    }
-  }
 }
 
