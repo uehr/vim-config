@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -109,10 +108,8 @@ using namespace std;
 
 // short names
 typedef long long ll;
-typedef string str;
 #define down_queue(x) priority_queue<x>
 #define up_queue(x) priority_queue<x, vector<x>, greater<x>>
-#define vec(x) vector<x>
 ll gcd(ll a,ll b){while(b){ll tmp = a % b;a = b;b = tmp;}return a;}
 ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 #define all(x) x.begin(), x.end()
@@ -121,8 +118,6 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 #define mp(x,y) make_pair(x,y)
 #define pb(x) push_back(x)
 #define pf(x) push_front(x)
-#define out(x) for(auto i : x) cout << i << " "; cout << endl;
-#define outln(x) for(auto i : x) cout << i << " " << endl;
 #define vec_cpy(to,from) copy(all(to),back_inserter(from))
 #define ary_cpy(to,from) memcpy(to, from, sizeof(from))
 #define MOD = 1000000007; 
