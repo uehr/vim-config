@@ -22,12 +22,19 @@ using namespace std;
 
 // pp args counter
 
-#define def_pp_comma0 ,1
-#define pp_comma0 ,0
-#define pp_is_empty(x, ...) pp_is_empty1(x pp_comma0)
-#define pp_is_empty1(x) pp_is_empty2((def_ ## x))
-#define pp_is_empty2(t) pp_is_empty3 t
-#define pp_is_empty3(f, s) s
+#define pp_arg10(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, ...) _9
+#define pp_has_comma(...) pp_arg10(__VA_ARGS__, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+#define pp_trigger_paren(...) ,
+#define pp_is_empty(...) \
+  pp_is_empty1( \
+      pp_has_comma(__VA_ARGS__), \
+      pp_has_comma(pp_trigger_paren __VA_ARGS__), \
+      pp_has_comma(__VA_ARGS__()), \
+      pp_has_comma(pp_trigger_paren __VA_ARGS__()) \
+      ) 
+#define pp_paste5(_0, _1, _2, _3, _4) _0 ## _1 ## _2 ## _3 ## _4
+#define pp_is_empty1(_0, _1, _2, _3) pp_has_comma(pp_paste5(pp_is_empty_case_, _0, _1, _2, _3))
+#define pp_is_empty_case_0001 ,
 
 #define pp_is_one(...) pp_is_one_(__VA_ARGS__, pp_one_seq)
 #define pp_is_one_(...) pp_is_one_n(__VA_ARGS__)
@@ -122,7 +129,71 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 #define ary_cpy(to,from) memcpy(to, from, sizeof(from))
 #define MOD 1000000007 
 
+// pp unionfind
 
+#define pp_gen_field(list) pp_gen_field1 list
+#define pp_gen_field1(name, val) decltype(val) name;
+#define pp_gen_init(list) pp_gen_init1 list
+#define pp_gen_init1(name, val) ,val
+#define pp_gen_find_set_wrap(ufnodename) ufnodename pp_gen_find_set
+#define pp_gen_find_set(list) pp_gen_find_set1 list
+#define pp_gen_find_set1(name, val) \
+  find_set_ ## name(int x, decltype(val) v) { \
+    if (nodes[x].parent == x) { \
+      nodes[x].name = v; \
+      return nodes[x]; \
+    } else { \
+      return nodes[x] = find_set_ ## name(nodes[x].parent, v); \
+    } \
+  }
+#define pp_gen_unite_set(list) pp_gen_unite_set1 list
+#define pp_gen_unite_set1(name, val) \
+  if (nodes[x].name == val) { \
+    find_set_ ## name(x, find(y).name); \
+  } \
+  if (nodes[y].name == val) { \
+    find_set_ ## name(y, find(x).name); \
+  }
+
+#define def_unionfind(ufname, ufnodename, ...) \
+  struct ufnodename { \
+    int parent; \
+    pp_foreach(pp_gen_field, __VA_ARGS__) \
+  }; \
+  struct ufname { \
+    vector<ufnodename> nodes; \
+    vector<int> rank; \
+    ufname(int n) : nodes(n+1), rank(n+1) { \
+      rep (i in n) { \
+        nodes[i] = ufnodename{i pp_foreach(pp_gen_init, __VA_ARGS__)}; \
+        rank[i] = 0; \
+      } \
+    } \
+    ufnodename find(int x) { \
+      if (nodes[x].parent == x) { \
+        return nodes[x]; \
+      } else { \
+        return nodes[x] = find(nodes[x].parent); \
+      } \
+    } \
+    pp_foreach(pp_gen_find_set_wrap(ufnodename), __VA_ARGS__) \
+    void unite(int x, int y) { \
+      x = find(x).parent; \
+      y = find(y).parent; \
+      if (x == y) return; \
+      if (rank[x] < rank[y]) { \
+        pp_foreach(pp_gen_unite_set, __VA_ARGS__); \
+        nodes[x].parent = y; \
+      } else { \
+        pp_foreach(pp_gen_unite_set, __VA_ARGS__); \
+        nodes[y].parent = x; \
+        if (rank[x] == rank[y]) rank[x]++; \
+      } \
+    } \
+    bool same(int x, int y) { \
+      return find(x).parent == find(y).parent; \
+    } \
+  }
 
 //
 // Implementation
