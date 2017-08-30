@@ -44,7 +44,7 @@ using namespace std;
 #define pp_narg(...) \
          pp_narg_(__VA_ARGS__, pp_narg_seq)
 #define pp_narg_(...) \
-         pp_arg_n(__VA_ARGS__)
+         pp_narg_n(__VA_ARGS__)
 #define pp_narg_n( \
           _1, _2, _3, _4, _5, _6, _7, _8, _9,_10, \
          _11,_12,_13,_14,_15,_16,_17,_18,_19,_20, \
@@ -94,12 +94,12 @@ using namespace std;
 #define up up_iter ,
 #define up_iter3(i, start, end) for (int i = start; i < end; i++)
 #define up_iter4(i, start, end, up) for (int i = start; i < end; i += up)
-#define up_iter(...) CAT(up_iter, PP_NARG(__VA_ARGS__))(__VA_ARGS__)
+#define up_iter(...) pp_cat(up_iter, pp_narg(__VA_ARGS__))(__VA_ARGS__)
 #define down down_iter ,
-#define down_iter2(i, end) for(int i = end-1; i >= 0; i++)
+#define down_iter2(i, end) for(int i = end-1; i >= 0; i--)
 #define down_iter3(i, start, end) for (int i = end-1; i >= start; i--)
 #define down_iter4(i, start, end, down) for (int i = end-1; i >= start; i -= down)
-#define down_iter(...) CAT(down_iter, PP_NARG(__VA_ARGS__))(__VA_ARGS__)
+#define down_iter(...) pp_cat(down_iter, pp_narg(__VA_ARGS__))(__VA_ARGS__)
 #define viter viter_iter ,
 #define viter_iter(i, v) auto tmpitr=v.begin(); for (auto i=*tmpitr; tmpitr != v.end(); tmpitr++)
 
@@ -199,8 +199,4 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 // Implementation
 //
 
-
-
-int main() {
-}
 
