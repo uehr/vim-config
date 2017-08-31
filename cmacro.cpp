@@ -121,6 +121,7 @@ typedef long long ll;
 #define up_queue(x) priority_queue<x, vector<x>, greater<x>>
 ll gcd(ll a,ll b){while(b){ll tmp = a % b;a = b;b = tmp;}return a;}
 ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
+vector<int> digit_split(int n){vector<int> result;while(n){result.pb(n % 10);n /= 10;}reverse(all(result));return result;}
 #define all(x) x.begin(), x.end()
 #define split_str(str, sp_word) istringstream stream(str); string res; for(int cnt = 0; getline(stream,res,sp_word); cnt++)
 #define digit(x) ((int)log10((double)(x)) + 1)
@@ -200,5 +201,3 @@ ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
 //
 // Implementation
 //
-
-
