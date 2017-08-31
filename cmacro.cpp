@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -111,7 +112,8 @@ using namespace std;
 #define debug_ary(ary) cout << "L" << __LINE__ << " [ "; for(auto ele : ary) cout << ele << " "; cout << "]" << endl;
 #else
 #define debug_echo(e)
-#define debug_var(...)#define debug_ary(ary) cout << "L" << __LINE__ << " [ "; for(auto ele : ary) cout << ele << " "; cout << "]" << endl;
+#define debug_var(...)
+#define debug_ary(ary) cout << "L" << __LINE__ << " [ "; for(auto ele : ary) cout << ele << " "; cout << "]" << endl;
 #define debug_ary(ary)
 #endif
 
@@ -121,19 +123,19 @@ typedef long long ll;
 #define up_queue(x) priority_queue<x, vector<x>, greater<x>>
 ll gcd(ll a,ll b){while(b){ll tmp = a % b;a = b;b = tmp;}return a;}
 ll lcm(ll a,ll b){return a / gcd(a,b) * b;}
-vector<int> digit_split(int n){vector<int> result;while(n){result.pb(n % 10);n /= 10;}reverse(all(result));return result;}
 #define all(x) x.begin(), x.end()
 #define split_str(str, sp_word) istringstream stream(str); string res; for(int cnt = 0; getline(stream,res,sp_word); cnt++)
 #define digit(x) ((int)log10((double)(x)) + 1)
 #define mp(x,y) make_pair(x,y)
 #define pb(x) push_back(x)
 #define pf(x) push_front(x)
+vector<int> digit_split(int n){vector<int> result(digit(n));for(int i = 0; n; i++){result[i] = n % 10;n /= 10;}return result;}
+#define time(content) {auto start = clock();content;auto end = clock();cout << (double)(end - start) << "ms" << endl;} 
 #define vec_cpy(to,from) copy(all(to),back_inserter(from))
 #define ary_cpy(to,from) memcpy(to, from, sizeof(from))
 #define MOD 1000000007 
 
 // pp unionfind
-
 #define pp_gen_field(list) pp_gen_field1 list
 #define pp_gen_field1(name, val) decltype(val) name;
 #define pp_gen_init(list) pp_gen_init1 list
@@ -201,3 +203,4 @@ vector<int> digit_split(int n){vector<int> result;while(n){result.pb(n % 10);n /
 //
 // Implementation
 //
+
